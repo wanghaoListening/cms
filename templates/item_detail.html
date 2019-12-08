@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详细</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+        <th>{{ item_detail.i_title }}</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ item_detail.i_content }}</td>
+            </tr>
+             <tr>
+                <td>发表日期：{{ item_detail.gmt_create }}      所属类目：{{ item_detail.c_id }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

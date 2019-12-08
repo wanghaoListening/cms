@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body style="text-align:center;">
+    <table border="1">
+        <thead>
+        <th>编号</th>
+        <th>名称</th>
+        <th>描述</th>
+        <th>操作</th>
+        </thead>
+        <tbody>
+        {% for category in category_list %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.c_name }}</td>
+                <td>{{ category.c_desc }}</td>
+                <td><a  href="http://127.0.0.1:8000/delete_category?c_id={{ category.id }}"  target= "">删除</a>|
+                    <a  href="http://127.0.0.1:8000/pre_add_item?c_id={{ category.id }}"  target= "">添加文章</a>|
+                    <a  href="http://127.0.0.1:8000/list_item?c_id={{ category.id }}"  target= "">文章列表</a>|
+                </td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td colspan="3">**类目相关操作**||<a  href="http://127.0.0.1:8000/pre_add_category"  target= "">添加新类目</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

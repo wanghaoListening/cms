@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+        <th>编号</th>
+        <th>文章内容</th>
+        <th>文章所属类型</th>
+        </thead>
+        <tbody>
+        {% for item in item_list %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.i_content }} >>>><a  href="http://127.0.0.1:8000/show_item_detail?i_id={{ item.id }}"  target= "">查看全部内容</a></td>
+                <td>{{ item.c_id }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

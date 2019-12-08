@@ -1,0 +1,2 @@
+开启mysql 服务
+ mysql.server start
