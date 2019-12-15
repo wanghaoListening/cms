@@ -104,10 +104,21 @@ def add_item(request):
         i_title = request.POST.get("i_title")
         item_model = Item(0, i_title, i_content, c_id)
         item_dao.save(item_model)
-        base_url = reverse('/list_item')  # 1 /products/
-        query_string = urlencode({'c_id': c_id})  # 2 category=42
-        url = '{}?{}'.format(base_url, query_string)  # 3 /products/?category=42
-        return redirect(url)
+
+        return render(request, "index.html")
+
+
+def delete_item(request):
+    """
+    删除文章
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        i_id = request.GET.get("i_id")
+        if i_id is not None:
+            item_dao.delete_by_id(i_id)
+            return render(request, "index.html")
 
 
 def list_item(request):

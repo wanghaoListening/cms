@@ -11,6 +11,7 @@
         <th>编号</th>
         <th>文章内容</th>
         <th>文章所属类型</th>
+        <th>文章相关操作</th>
         </thead>
         <tbody>
         {% for item in item_list %}
@@ -18,6 +19,7 @@
                 <td>{{ item.id }}</td>
                 <td>{{ item.i_content }} >>>><a  href="http://127.0.0.1:8000/show_item_detail?i_id={{ item.id }}"  target= "">查看全部内容</a></td>
                 <td>{{ item.c_id }}</td>
+                <td><a  href="http://127.0.0.1:8000/delete_item?i_id={{ item.id }}"  target= "">删除文章</a></td>
             </tr>
         {% endfor %}
         </tbody>
